@@ -8,7 +8,7 @@
     "start": "next start",
     "serve": "serve out",
     "lint": "eslint",
-    "deploy": "pnpm run build && gh-pages -d out -b gh-pages"
+    "deploy": "pnpm run build && gh-pages -d out -b gh-pages --dotfiles"
   },
   "dependencies": {
     "next": "16.0.3",
