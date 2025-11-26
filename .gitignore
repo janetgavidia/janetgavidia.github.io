@@ -1,1 +1,13 @@
 .DS_STORE
+node_modules
+
+# Next.js
+.next/
+out/
+
+# pnpm
+.pnpm-store/
+
+# Lock files from other package managers (we use pnpm)
+package-lock.json
+yarn.lock

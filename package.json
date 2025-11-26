@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "serve out",
     "lint": "eslint",
-    "deploy": "npm run build && gh-pages -d out -b gh-pages"
+    "deploy": "pnpm run build && gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "next": "16.0.3",
@@ -22,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "gh-pages": "^6.3.0",
+    "serve": "^14.2.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

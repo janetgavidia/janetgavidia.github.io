@@ -43,7 +43,7 @@ janet-portfolio/
 
 ### Prerequisites
 
-- Node.js 18+ and npm installed
+- Node.js 18+ and pnpm installed
 - Git installed
 
 ### Installation
@@ -56,7 +56,7 @@ cd janetgavidia.github.io
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
@@ -64,7 +64,7 @@ npm install
 Run the development server with hot reload:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the site.
@@ -89,7 +89,7 @@ After editing, save the file and the dev server will automatically reload.
 Build the static site:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 This generates static HTML, CSS, and JavaScript files in the `/out` directory.
@@ -124,16 +124,16 @@ git push -u origin main
 
 1. **Build the site**:
 ```bash
-npm run build
+pnpm build
 ```
 
 2. **Deploy the `out` folder contents**:
 ```bash
 # Install gh-pages package (one-time)
-npm install -D gh-pages
+pnpm add -D gh-pages
 
 # Deploy
-npx gh-pages -d out -b gh-pages
+pnpm dlx gh-pages -d out -b gh-pages
 ```
 
 3. **Configure GitHub Pages**:
@@ -170,13 +170,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
       
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       
       - name: Build
-        run: npm run build
+        run: pnpm build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -205,8 +209,8 @@ Then configure GitHub Pages to use GitHub Actions:
 To update your live site:
 
 1. Make your changes locally
-2. Test with `npm run dev`
-3. Build: `npm run build`
+2. Test with `pnpm dev`
+3. Build: `pnpm build`
 4. Commit and push:
 ```bash
 git add .
@@ -216,7 +220,7 @@ git push origin main
 
 5. Deploy (if using manual method):
 ```bash
-npx gh-pages -d out -b gh-pages
+pnpm dlx gh-pages -d out -b gh-pages
 ```
 
 If using GitHub Actions, deployment happens automatically on push to main.
@@ -250,20 +254,20 @@ All components are in `/src/components/`. They use TypeScript interfaces for typ
 - Ensure `images.unoptimized: true` is set in `next.config.ts` (required for static export)
 
 ### Issue: Styles not applying
-- **Solution**: Run `npm run build` to regenerate Tailwind CSS
+- **Solution**: Run `pnpm build` to regenerate Tailwind CSS
 - Clear browser cache
 
 ### Issue: Changes not appearing on live site
 - **Solution**: 
-  1. Rebuild: `npm run build`
+  1. Rebuild: `pnpm build`
   2. Clear the `out` folder
-  3. Redeploy: `npx gh-pages -d out -b gh-pages`
+  3. Redeploy: `pnpm dlx gh-pages -d out -b gh-pages`
   4. Wait a few minutes for GitHub to update
   5. Hard refresh your browser (Cmd+Shift+R or Ctrl+Shift+R)
 
 ## Development Tips
 
-- Use `npm run dev` for instant hot reload during development
+- Use `pnpm dev` for instant hot reload during development
 - All content is in `/src/data/` - no need to touch components to update text
 - Components are reusable - great for adding similar sections
 - TypeScript provides autocomplete and type checking for content

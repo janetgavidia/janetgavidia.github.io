@@ -14,7 +14,7 @@ This Next.js portfolio has been built with:
 ### 1. Test Locally (Recommended First Step)
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open http://localhost:3000 to preview your site.
@@ -56,7 +56,7 @@ git push -u origin main
 **Deploy:**
 
 ```bash
-npm run deploy
+pnpm deploy
 ```
 
 **Configure GitHub Pages:**
@@ -71,10 +71,10 @@ npm run deploy
 ```bash
 # 1. Make your changes
 # 2. Test locally
-npm run dev
+pnpm dev
 
 # 3. Deploy
-npm run deploy
+pnpm deploy
 ```
 
 ## 📁 Project Structure
@@ -99,11 +99,11 @@ src/
 
 ## 💡 Tips
 
-1. **Always test locally** before deploying: `npm run dev`
+1. **Always test locally** before deploying: `pnpm dev`
 2. **Content changes** only require editing `/src/data/` files
 3. **Adding a new project**: Edit `/src/data/projects.ts` and add image to `/public/images/projects/`
 4. **Changing colors**: Edit `/src/app/globals.css` (look for CSS variables)
-5. **Deploy anytime**: Just run `npm run deploy`
+5. **Deploy anytime**: Just run `pnpm deploy`
 
 ## 🆘 Need Help?
 
@@ -115,15 +115,15 @@ See `README.md` for:
 
 ## ✅ Checklist
 
-- [ ] Test site locally (`npm run dev`)
+- [ ] Test site locally (`pnpm dev`)
 - [ ] Replace placeholder images
 - [ ] Update content in `/src/data/`
 - [ ] Create GitHub repository: `janetgavidia.github.io`
-- [ ] Deploy: `npm run deploy`
+- [ ] Deploy: `pnpm deploy`
 - [ ] Configure GitHub Pages settings
 - [ ] Visit live site: `https://janetgavidia.github.io`
 
 ---
 
-**You're all set!** Start with `npm run dev` to see your portfolio locally.
+**You're all set!** Start with `pnpm dev` to see your portfolio locally.
 
