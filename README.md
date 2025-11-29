@@ -96,7 +96,7 @@ This generates static HTML, CSS, and JavaScript files in the `/out` directory.
 
 ## Deploying to GitHub Pages
 
-This portfolio is configured to be hosted at `https://janetgavidia.github.io`.
+This portfolio is configured for automatic deployment to `https://janetgavidia.github.io` using GitHub Actions.
 
 ### Initial Setup
 
@@ -118,91 +118,24 @@ git branch -M main
 git push -u origin main
 ```
 
-### Deployment Methods
+### Configure GitHub Pages
 
-#### Option 1: Manual Deployment (Recommended for first deployment)
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under "Source", select **GitHub Actions**
+4. Click **Save**
 
-1. **Build the site**:
-```bash
-pnpm build
-```
+That's it! The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically build and deploy your site whenever you push to the `main` branch.
 
-2. **Deploy the `out` folder contents**:
-```bash
-# Install gh-pages package (one-time)
-pnpm add -D gh-pages
+### How It Works
 
-# Deploy
-pnpm dlx gh-pages -d out -b gh-pages
-```
-
-3. **Configure GitHub Pages**:
-   - Go to your repository on GitHub
-   - Navigate to **Settings** → **Pages**
-   - Under "Source", select branch: `gh-pages`
-   - Click **Save**
-   - Your site will be live at `https://janetgavidia.github.io` in a few minutes
-
-#### Option 2: Automated Deployment with GitHub Actions
-
-Create `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      - name: Build
-        run: pnpm build
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v3
-```
-
-Then configure GitHub Pages to use GitHub Actions:
-- Go to **Settings** → **Pages**
-- Under "Source", select **GitHub Actions**
-- Push to main branch to trigger deployment
+The deployment workflow:
+- Triggers automatically on every push to the `main` branch
+- Can also be triggered manually from the Actions tab
+- Installs dependencies using pnpm
+- Builds the Next.js static site
+- Deploys the `out` folder to GitHub Pages
+- Your site will be live at `https://janetgavidia.github.io`
 
 ### Updating the Site
 
@@ -210,20 +143,17 @@ To update your live site:
 
 1. Make your changes locally
 2. Test with `pnpm dev`
-3. Build: `pnpm build`
-4. Commit and push:
+3. Commit and push:
 ```bash
 git add .
 git commit -m "Update portfolio content"
 git push origin main
 ```
 
-5. Deploy (if using manual method):
-```bash
-pnpm dlx gh-pages -d out -b gh-pages
-```
+4. GitHub Actions will automatically build and deploy your changes
+5. Your site will be updated at `https://janetgavidia.github.io` in a few minutes
 
-If using GitHub Actions, deployment happens automatically on push to main.
+You can monitor the deployment progress in the **Actions** tab of your GitHub repository.
 
 ## Customization
 
@@ -246,8 +176,9 @@ All components are in `/src/components/`. They use TypeScript interfaces for typ
 ## Troubleshooting
 
 ### Issue: 404 errors after deployment
-- **Solution**: Ensure GitHub Pages is configured to use the correct branch (`gh-pages`)
+- **Solution**: Ensure GitHub Pages is configured to use **GitHub Actions** as the source
 - Check that the `output: 'export'` is set in `next.config.ts`
+- Verify the workflow completed successfully in the Actions tab
 
 ### Issue: Images not loading
 - **Solution**: Verify images are in `/public/images/` and paths start with `/images/`
@@ -259,11 +190,10 @@ All components are in `/src/components/`. They use TypeScript interfaces for typ
 
 ### Issue: Changes not appearing on live site
 - **Solution**: 
-  1. Rebuild: `pnpm build`
-  2. Clear the `out` folder
-  3. Redeploy: `pnpm dlx gh-pages -d out -b gh-pages`
-  4. Wait a few minutes for GitHub to update
-  5. Hard refresh your browser (Cmd+Shift+R or Ctrl+Shift+R)
+  1. Check that your changes were pushed to the `main` branch
+  2. Verify the GitHub Actions workflow completed successfully (Actions tab)
+  3. Wait a few minutes for GitHub Pages to update
+  4. Hard refresh your browser (Cmd+Shift+R or Ctrl+Shift+R)
 
 ## Development Tips
 
