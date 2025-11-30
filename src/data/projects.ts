@@ -6,19 +6,16 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: "The Wizarding World of Harry Potter",
-    image: "/images/projects/harry-potter.jpg",
-    description: "Theme park attraction development and production",
+    title: "Super Nintendo World Japan",
+    image: "/images/projects/super-nintendo-world-japan.jpg",
   },
   {
-    title: "Transformers: The Ride",
-    image: "/images/projects/transformers.jpg",
-    description: "Immersive attraction experience",
+    title: "Warner Bros. World Abu Dhabi",
+    image: "/images/projects/warner-bros-world-abu-dhabi.jpg",
   },
   {
-    title: "Universal Studios Theme Park",
-    image: "/images/projects/universal.jpg",
-    description: "Location-based entertainment development",
+    title: "The Making of Harry Potter, London",
+    image: "/images/projects/making-of-harry-potter-london.jpg",
   },
 ];
 

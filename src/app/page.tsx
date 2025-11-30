@@ -150,7 +150,11 @@ export default function Home() {
               <div className="flex-1">
                 {/* Project Images */}
                 <div className="mb-16">
-                  <h3 className="text-xl font-semibold mb-6">Project Examples</h3>
+                  <div className="mb-8">
+                    <p className="text-gray-800 leading-relaxed">
+                      Every experience is the result of a team of specialists bringing creative and technical ideas to life. As a producer, my role is to connect those disciplines—aligning vision, budgets, and execution so the work stays true to intent. Each projects represents the collaboration of many talented people I&apos;ve had the privilege to work with and projects I led and/or contributed to.
+                    </p>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projectsData.map((project, index) => (
                       <ProjectCard key={index} {...project} />
@@ -158,10 +162,46 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Client Logos */}
+                {/* Project Awards */}
+                <div className="mb-16">
+                  <h3 className="text-xl font-bold mb-6">Project Awards</h3>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li className="text-gray-800 leading-relaxed">
+                      THEA - Winner - Outstanding Achievement in a Theme Park Land - Universal Studios Japan, Super Nintendo World
+                    </li>
+                    <li className="text-gray-800 leading-relaxed">
+                      Muse Creative Awards, Platinum Winner - Exhibition Experience - Warner Bros. Studio Tour Hollywood, Stage 48
+                    </li>
+                    <li className="text-gray-800 leading-relaxed">
+                      Muse Creative Awards, Platinum Winner - Experiential & Immersive - Warner Bros. Studio Tour Hollywood Welcome Center
+                    </li>
+                    <li className="text-gray-800 leading-relaxed">
+                      THEA - Winner - Outstanding Achievement in a Theme Park - Yas Island, UAE, Warner Bros. World™ Abu Dhabi
+                    </li>
+                    <li className="text-gray-800 leading-relaxed">
+                      Park World Excellence Award - Themed Attraction of the Year - Batman Knight Flight at Warner Bros. World™ Abu Dhabi
+                    </li>
+                    <li className="text-gray-800 leading-relaxed">
+                      THEA - Winner - Outstanding Achievement - Warner Bros. Studio Tour London – The Making of Harry Potter
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Clients / Partners */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-6">Clients / Partners</h3>
-                  <LogoGrid logos={clientsData} />
+                  <h3 className="text-xl font-bold mb-6">Clients / Partners</h3>
+                  <div className="mb-8">
+                    <p className="text-gray-800 leading-relaxed">
+                      I&apos;ve also worked on a variety of blue sky projects smaller in scale, working directly with brands to bring their stories into experiential concepts. Some projects stayed in concept phases while others moved into installation -- all requiring close brand management and creative alignment. <strong>By nature of the industry, many projects remain confidential.</strong>
+                    </p>
+                  </div>
+                  <div className="w-full">
+                    <img 
+                      src="/images/clients-logos-grid.png" 
+                      alt="Clients and Partners Logos" 
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ export default function EducationItem({
   
   return (
     <div className="flex items-start gap-6 mb-6">
-      <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center bg-gray-100 rounded-lg text-3xl">
+      <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center text-3xl">
         {logo ? (
           <div className="relative h-full w-full">
             <Image
