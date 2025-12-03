@@ -53,7 +53,9 @@ export default function Home() {
                     I am a Producer who bridges creative storytelling and business strategy. I lead and structure creative operations, bringing together cross-disciplinary teams to align vision, production, and execution. Whether developing a new attraction, translating an IP into a physical experience, or leading multi-stakeholder negotiations, my role centers on protecting creative intent while driving business outcomes. With extensive experience across licensed worlds and entertainment franchises in international markets, I understand how to translate IP into experiences that preserve authenticity, resonate culturally, and deliver measurable value.
                   </p>
                   <p>
-                    My resume includes Super Nintendo World Japan, Warner Bros. World Abu Dhabi, and The Wizarding World of Harry Potter Studio Tour London, along with emerging real-world gaming and tech-integrated projects and hospitality across the globe. I thrive in creative environments with many moving parts, passionate stakeholders, and constant change, where navigating complexity and &quot;strategically winging it&quot; becomes a practiced, professional skill.
+                    My resume includes <span className="font-semibold italic">Super Nintendo World Japan</span>,{' '}
+                    <span className="font-semibold italic">Warner Bros. World Abu Dhabi</span>, and{' '}
+                    <span className="font-semibold italic">The Wizarding World of Harry Potter Studio Tour London</span>, along with emerging real-world gaming and tech-integrated projects and hospitality across the globe. I thrive in creative environments with many moving parts, passionate stakeholders, and constant change, where navigating complexity and &quot;strategically winging it&quot; becomes a practiced, professional skill.
                   </p>
                   <p>
                     I currently serve on the Board of Directors for Ryman Arts, an organization dedicated to advancing equitable access to arts education. I am also a member of the Social Gastronomy Movement, where I apply experience-design principles to support community-centered projects and drive social inclusion. As a speaker and facilitator, I have led workshops on inclusive experience design, co-chaired a United Nations Food Systems Summit task force in partnership with the Basque Culinary Center, and supported global COVID emergency food-relief initiatives with 50 Best Restaurants.
@@ -62,10 +64,17 @@ export default function Home() {
                     If you&apos;d like to connect further regarding professional opportunities,{' '}
                     <a
                       href="mailto:janetgavidia@icloud.com"
-                      className="relative inline-block font-normal hover:font-bold underline hover:no-underline overflow-hidden text-gray-900 before:content-[''] before:absolute before:inset-0 before:bg-yellow-highlight before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-200 before:ease-out before:-z-10 before:transform"
+                      className="font-normal text-gray-900 underline"
                     >
                       you can reach me here.
-                    </a>
+                    </a>{' '}
+                    <span className="inline-flex items-center ml-3 align-middle">
+                      <img
+                        src="/initials.png"
+                        alt="Initials signature"
+                        className="h-20 w-auto"
+                      />
+                    </span>
                   </p>
                 </div>
               </div>
@@ -172,7 +181,7 @@ export default function Home() {
                 {/* Project Awards */}
                 <div className="mb-16">
                   <h3 className="text-xl font-bold mb-6">Project Awards</h3>
-                  <ul className="list-disc pl-6 space-y-3">
+                  <ul className="list-disc pl-6 space-y-0.5">
                     <li className="text-gray-800 leading-relaxed">
                       THEA - Winner - Outstanding Achievement in a Theme Park Land - Universal Studios Japan, Super Nintendo World
                     </li>
@@ -223,9 +232,14 @@ export default function Home() {
                 <SectionHeader>community engagement</SectionHeader>
               </div>
               <div className="flex-1 space-y-6">
-                {communityData.map((community, index) => (
-                  <CommunityCard key={index} {...community} />
-                ))}
+                <p className="text-gray-800 leading-relaxed">
+                  I stay active in both industry and social impact communities, contributing to organizations that advance creative education, equitable food systems, and collaborative innovation. These roles reflect my commitment to mentorship, sustainability, and strengthening the cultural and creative ecosystem.
+                </p>
+                <div className="pl-24 mt-5">
+                  {communityData.map((community, index) => (
+                    <CommunityCard key={index} {...community} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -239,21 +253,18 @@ export default function Home() {
                 <SectionHeader>contact</SectionHeader>
               </div>
               <div className="flex-1">
-                <p className="text-lg text-gray-700 mb-8">
-                  Let&apos;s create something extraordinary together.
-                </p>
                 <div className="flex flex-col sm:flex-row items-start gap-4">
                   <a
-                    href={`mailto:${aboutData.email}`}
-                    className="px-6 py-3 bg-yellow-highlight hover:bg-yellow-400 transition-colors rounded text-gray-900 font-medium"
+                    href="mailto:janetgavidia@icloud.com"
+                    className="relative inline-block px-2 py-1 text-2xl text-gray-900 hover:text-black hover:font-semibold transition-colors font-normal overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-yellow-highlight before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-200 before:ease-out before:-z-10 before:transform"
                   >
                     Get in Touch
                   </a>
                   <a
-                    href={aboutData.linkedin}
+                    href="https://www.linkedin.com/in/jgavidia/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border-2 border-gray-900 hover:bg-gray-900 hover:text-white transition-colors rounded font-medium"
+                    className="relative inline-block px-2 py-1 text-2xl text-gray-900 hover:text-black hover:font-semibold transition-colors font-normal overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-yellow-highlight before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-200 before:ease-out before:-z-10 before:transform"
                   >
                     LinkedIn
                   </a>
