@@ -22,8 +22,8 @@ export default function EducationItem({
   const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
   
   return (
-    <div className="flex items-start gap-6 mb-6">
-      <div className="flex-shrink-0 h-16 w-16 flex items-center justify-center text-3xl">
+    <div className="flex items-start gap-4 mb-0 pl-24">
+      <div className="flex-shrink-0 h-24 w-24 flex items-start justify-start text-3xl">
         {logo ? (
           <div className="relative h-full w-full">
             <Image
@@ -37,11 +37,11 @@ export default function EducationItem({
           <span>{randomEmoji}</span>
         )}
       </div>
-      <div className="flex-1 pb-6 border-b border-gray-300">
-        <h3 className="text-xl font-semibold mb-1">{institution}</h3>
-        {degree && <p className="text-gray-700">{degree}</p>}
-        {field && <p className="text-gray-700">{field}</p>}
-        {period && <p className="text-sm text-gray-600 mt-1">{period}</p>}
+      <div className="flex-1 pb-0 text-[0.81rem] leading-tight space-y-1">
+        <h3 className="text-lg font-semibold">{institution}</h3>
+        {degree && <p className="text-gray-700 leading-tight">{degree}</p>}
+        {field && <p className="text-gray-700 leading-tight">{field}</p>}
+        {period && <p className="text-sm text-gray-600 leading-tight">{period}</p>}
         {description && (
           <p className="text-gray-800 mt-2 leading-relaxed">{description}</p>
         )}
@@ -49,4 +49,3 @@ export default function EducationItem({
     </div>
   );
 }
-

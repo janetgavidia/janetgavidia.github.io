@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <Navigation />
       
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white text-[0.9rem]">
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
@@ -44,25 +44,28 @@ export default function Home() {
         <section id="about" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
                 <SectionHeader>about me</SectionHeader>
               </div>
-              <div className="flex-1 prose prose-lg max-w-none">
+              <div className="flex-1 prose max-w-none">
                 <div className="text-gray-800 leading-relaxed space-y-4">
                   <p>
-                    <strong>I&apos;m a Producer who bridges creative storytelling and business strategy.</strong> That can take the form of being the hub of information, the realigner of teams, and the advocate for client goals and creative stewardship -- among other &quot;hard to define&quot; roles of a Producer. I bring together cross-disciplinary teams to align vision, production, and execution. Whether developing a new attraction, translating a digital IP into a physical experience, or leading multi-stakeholder negotiations, my role focuses on protecting creative intent while driving business outcomes.
+                    I am a Producer who bridges creative storytelling and business strategy. I lead and structure creative operations, bringing together cross-disciplinary teams to align vision, production, and execution. Whether developing a new attraction, translating an IP into a physical experience, or leading multi-stakeholder negotiations, my role centers on protecting creative intent while driving business outcomes. With extensive experience across licensed worlds and entertainment franchises in international markets, I understand how to translate IP into experiences that preserve authenticity, resonate culturally, and deliver measurable value.
                   </p>
                   <p>
-                    Having worked extensively across licensed worlds and entertainment franchises, <strong>I understand how to translate IP into experiences that preserve authenticity and deliver measurable value.</strong> I help partners design creative frameworks and deal structures that balance brand integrity with innovation, ensuring that each project serves both the story and the strategy behind it.
+                    My resume includes Super Nintendo World Japan, Warner Bros. World Abu Dhabi, and The Wizarding World of Harry Potter Studio Tour London, along with emerging real-world gaming and tech-integrated projects and hospitality across the globe. I thrive in creative environments with many moving parts, passionate stakeholders, and constant change, where navigating complexity and &quot;strategically winging it&quot; becomes a practiced, professional skill.
                   </p>
                   <p>
-                    <strong>My approach blends the precision of a producer with the perspective of a strategist:</strong> aligning budgets with briefs, defining the right mix of creative and operational expertise, and ensuring every decision serves both the guest experience and the business model that sustains it -- and making sure the team is equipped to make it happen.
+                    I currently serve on the Board of Directors for Ryman Arts, an organization dedicated to advancing equitable access to arts education. I am also a member of the Social Gastronomy Movement, where I apply experience-design principles to support community-centered projects and drive social inclusion. As a speaker and facilitator, I have led workshops on inclusive experience design, co-chaired a United Nations Food Systems Summit task force in partnership with the Basque Culinary Center, and supported global COVID emergency food-relief initiatives with 50 Best Restaurants.
                   </p>
                   <p>
-                    In my spare time I cook, I actually took professional culinary courses just for fun. I enjoy connecting to people and cultures through food. I volunteer with social impact organizations around food solidarity and youth access to arts education. Outside of that, you&apos;ll likely find me at the gym.
-                  </p>
-                  <p>
-                    I hope this page gives you a glimpse of who I am. To connect further, <strong>you can reach me here.</strong>
+                    If you&apos;d like to connect further regarding professional opportunities,{' '}
+                    <a
+                      href="mailto:janetgavidia@icloud.com"
+                      className="relative inline-block font-normal hover:font-bold underline hover:no-underline overflow-hidden text-gray-900 before:content-[''] before:absolute before:inset-0 before:bg-yellow-highlight before:scale-x-0 hover:before:scale-x-100 before:origin-left before:transition-transform before:duration-200 before:ease-out before:-z-10 before:transform"
+                    >
+                      you can reach me here.
+                    </a>
                   </p>
                 </div>
               </div>
@@ -74,13 +77,13 @@ export default function Home() {
         <section id="education" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
                 <SectionHeader>education</SectionHeader>
               </div>
               <div className="flex-1">
                 <div className="mb-8">
                   <p className="text-gray-800 leading-relaxed">
-                    My educational background is indicative of my knowledge and interest of various art forms and social understandings. I later pursed an MBA to augment my career in Themed Entertainment and better serve my teams, projects, and clients.
+                    My studies gave me a strong grounding in how people think, create, and work together, which shaped how I approach problem-solving and collaboration. I later completed an MBA to strengthen my work in themed entertainment and better support my teams, projects, and clients.
                   </p>
                 </div>
                 <div className="space-y-6">
@@ -97,7 +100,7 @@ export default function Home() {
         <section id="professional" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
                 <SectionHeader>professional</SectionHeader>
               </div>
               <div className="flex-1">
@@ -144,8 +147,12 @@ export default function Home() {
         <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
-                <SectionHeader>notable projects & clients</SectionHeader>
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
+                <SectionHeader>
+                  notable
+                  <br />
+                  projects & clients
+                </SectionHeader>
               </div>
               <div className="flex-1">
                 {/* Project Images */}
@@ -212,8 +219,8 @@ export default function Home() {
         <section id="community" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
-                <SectionHeader>Community Engagement</SectionHeader>
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
+                <SectionHeader>community engagement</SectionHeader>
               </div>
               <div className="flex-1 space-y-6">
                 {communityData.map((community, index) => (
@@ -228,7 +235,7 @@ export default function Home() {
         <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-              <div className="md:w-[200px] flex-shrink-0 md:text-right md:sticky md:top-24 md:self-start">
+              <div className="md:w-[200px] flex-shrink-0 md:text-left md:sticky md:top-24 md:self-start">
                 <SectionHeader>contact</SectionHeader>
               </div>
               <div className="flex-1">
