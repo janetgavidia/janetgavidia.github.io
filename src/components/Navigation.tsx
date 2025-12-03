@@ -57,7 +57,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-black transition-colors text-sm"
+                className="text-gray-700 hover:text-black hover:font-semibold transition-colors text-sm"
               >
                 {item.name}
               </button>
@@ -73,7 +73,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black transition-colors"
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-black hover:font-semibold transition-colors"
               >
                 {item.name}
               </button>
@@ -84,4 +84,3 @@ export default function Navigation() {
     </nav>
   );
 }
-
