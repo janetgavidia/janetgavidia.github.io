@@ -128,10 +128,16 @@ export default function Home() {
                         <div className="mb-2">
                           <h3 className="text-lg font-semibold">{exp.title}</h3>
                           {(exp.company || exp.location) && (
-                            <p className="text-sm text-gray-700">
-                              {exp.company && <span>{exp.company}</span>}
-                              {exp.company && exp.location && <span> | </span>}
-                              {exp.location && <span>{exp.location}</span>}
+                            <p className="flex items-center gap-2 text-sm text-gray-700">
+                              <span
+                                className="inline-block h-3 w-3 rounded-full bg-gray-300"
+                                aria-hidden="true"
+                              />
+                              <span>
+                                {exp.company && <span>{exp.company}</span>}
+                                {exp.company && exp.location && <span> | </span>}
+                                {exp.location && <span>{exp.location}</span>}
+                              </span>
                             </p>
                           )}
                         </div>
