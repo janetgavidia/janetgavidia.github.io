@@ -1,10 +1,10 @@
 import Navigation from '@/components/Navigation';
 import SectionHeader from '@/components/SectionHeader';
 import ExperienceCard from '@/components/ExperienceCard';
-import ProjectCard from '@/components/ProjectCard';
 import LogoGrid from '@/components/LogoGrid';
 import EducationItem from '@/components/EducationItem';
 import CommunityCard from '@/components/CommunityCard';
+import ProjectsSection from '@/components/ProjectsSection';
 
 import { aboutData } from '@/data/about';
 import { educationData } from '@/data/education';
@@ -177,11 +177,7 @@ export default function Home() {
                       Every experience is the result of a team of specialists bringing creative and technical ideas to life. As a producer, my role is to connect those disciplines—aligning vision, budgets, and execution so the work stays true to intent. Each projects represents the collaboration of many talented people I&apos;ve had the privilege to work with and projects I led and/or contributed to.
                     </p>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projectsData.map((project, index) => (
-                      <ProjectCard key={index} {...project} />
-                    ))}
-                  </div>
+                  <ProjectsSection projects={projectsData} />
                 </div>
 
                 {/* Project Awards */}

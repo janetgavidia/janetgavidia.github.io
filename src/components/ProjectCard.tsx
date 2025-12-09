@@ -4,11 +4,23 @@ interface ProjectCardProps {
   title: string;
   image: string;
   description?: string;
+  onClick?: () => void;
 }
 
-export default function ProjectCard({ title, image }: ProjectCardProps) {
+export default function ProjectCard({ title, image, onClick }: ProjectCardProps) {
   return (
-    <div className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div 
+      className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick?.();
+        }
+      }}
+    >
       <div className="relative aspect-video">
         <Image
           src={image}
